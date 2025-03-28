@@ -8,6 +8,7 @@ export const runBrowser = async (browserLauncher) => {
 
     try {
         browser = await browserLauncher.launch();
+        console.log(`Launched ${browser.browserType().name()} (v${browser.version()})`);
         const context = await browser.newContext();
         const page = await context.newPage();
 
